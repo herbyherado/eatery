@@ -9,6 +9,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Dish.associate = function(models) {
     // associations can be defined here
+    Dish.belongsTo(models.Restaurant)
     Dish.belongsToMany(models.User, {through: models.UserDish})
     Dish.hasMany(models.UserDish)
   };
