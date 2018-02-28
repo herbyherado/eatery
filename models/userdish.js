@@ -4,7 +4,7 @@ module.exports = (sequelize, DataTypes) => {
     UserId: DataTypes.INTEGER,
     DishId: DataTypes.INTEGER,
     Like: DataTypes.BOOLEAN,
-    Displyed: DataTypes.BOOLEAN
+    Displayed: DataTypes.BOOLEAN
   }, {});
   UserDish.associate = function(models) {
     // associations can be defined here
