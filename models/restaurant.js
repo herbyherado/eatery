@@ -1,13 +1,14 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   var Restaurant = sequelize.define('Restaurant', {
-    name: DataTypes.STRING,
-    address: DataTypes.STRING,
-    city: DataTypes.STRING,
-    latitude: DataTypes.STRING,
-    longitude: DataTypes.STRING
+    Name: DataTypes.STRING,
+    Address: DataTypes.STRING,
+    City: DataTypes.STRING,
+    Latitude: DataTypes.STRING,
+    Longitude: DataTypes.STRING
   }, {});
   Restaurant.associate = function(models) {
+    Restaurant.hasMany(models.Dish)
     // associations can be defined here
   };
   return Restaurant;
