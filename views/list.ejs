@@ -1,0 +1,24 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h2>List of Restaurants</h2>
+    <table style="cursor:pointer">
+      <thead>
+        <th>No</th>
+        <th>Nama Restaurat</th>
+        <th>Address</th>
+      </thead>
+      <tbody>
+        <% restaurants.forEach((restaurant,i) => {%>
+          <tr onclick="document.location='/list/get_map/<%= restaurant.id%>'" style="cursor:hand">
+            <td><%= i+1%></td>
+            <td><%= restaurant.Name%></td>
+            <td><%= restaurant.Address%></td>
+          </tr>
+        <%})%>
+      </tbody>
+    </table>
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=-6.2271780112,106.7971193790&markers=color:red%7Clabel:C%7C-6.2271780112,106.7971193790&zoom=16&size=600x400"/>
+  </body>
+</html>

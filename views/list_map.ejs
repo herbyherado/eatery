@@ -1,0 +1,10 @@
+<html>
+  <head>
+  </head>
+  <body>
+    <h2><%= `${restaurant.Name}'s Location`%></h2>
+    <p><%= restaurant.Latitude%></p>
+    <p><%= restaurant.Longitude%></p>
+    <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%= restaurant.Latitude%>,<%= restaurant.Longitude%>&markers=color:red%7Clabel:C%7C<%= restaurant.Latitude%>,<%= restaurant.Longitude%>&zoom=16&size=600x400"/>
+  </body>
+</html>
