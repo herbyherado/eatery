@@ -5,13 +5,19 @@
     </head>
     <body>
         <h3>Please Sign In</h3>
-        <form>
+        <form method="POST">
             Username:
             <input type="text" name="Username">
             <br>
             Password:
-            <input type="password" name"Password">
-            <button><a href = '/dashboard'></a></button>
+            <input type="password" name="Password">
+            <br>
+            <%= err.err %>
+            <br>
+            <input type="submit" value="Sign In">
+            
+            
+            <button><a href="/register">Register</a></button>
         </form>
     </body>
 </html>
