@@ -2,25 +2,25 @@
 module.exports = {
   up: (queryInterface, Sequelize) => {
     return queryInterface.createTable('Restaurants', {
-      id: {
+      Id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      Name: {
         type: Sequelize.STRING
       },
-      address: {
+      Address: {
         type: Sequelize.STRING
       },
-      city: {
+      City: {
         type: Sequelize.STRING
       },
-      latitude: {
+      Latitude: {
         type: Sequelize.STRING
       },
-      longitude: {
+      Longitude: {
         type: Sequelize.STRING
       },
       createdAt: {
