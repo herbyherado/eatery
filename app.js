@@ -56,6 +56,7 @@ app.post('/', (req, res) => {
         } else {
           req.session.isLogin = true
           req.session.profile = user
+
           res.redirect(`/dashboard`)
         }
       })
