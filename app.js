@@ -5,10 +5,11 @@ const dashboard = require('./routes/dashboard')
 const bodyParser = require('body-parser')
 const model = require('./models')
 const session = require('express-session')
+const register = require('./routes/register')
 const edit = require('./routes/edit')
 const list = require('./routes/list')
-const register = require('./routes/register')
 
+app.use(express.static('public'))
 app.locals.helper = require('./helpers/index.js')
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
@@ -25,7 +26,6 @@ app.use('/list', list)
 app.use('/register', register)
 app.use('/dashboard', dashboard)
 
-// Testing
 app.get('/', (req, res) => {
   console.log(req.query)
   if (!req.query){
@@ -62,8 +62,6 @@ app.post('/', (req, res) => {
     }
   })
 })
-
-app.use(express.static('public'))
 
 // Server
 app.listen(PORT, () => {

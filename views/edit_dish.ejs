@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>
+      Eatery
+    </title>
+  </head>
+  <body>
+    <h2>Edit Dish</h2>
+    <form action="/edit/dish/update/<%= dish.id%>" method="post">
+      <fieldset>
+        <label for="Name">Name</label>
+        <input name="Name" type="text" placeholder="Name" value="<%= dish.Name%>">
+    
+        <label for="Price">Price</label>
+        <input name="Price" type="text" placeholder="Price" value="<%= dish.Price%>">
+    
+        <label for="Cuisine">Cuisine</label>
+        <input name="Cuisine" type="text" placeholder="Cuisine" value="<%= dish.Cuisine%>">
+    
+        <button type="submit">Edit Dish</button>
+      </fieldset>
+    </form>
+  </body>
+</html>
