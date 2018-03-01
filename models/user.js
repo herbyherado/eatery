@@ -12,5 +12,8 @@ module.exports = (sequelize, DataTypes) => {
     User.belongsToMany(models.Dish, {through: models.UserDish})
     User.hasMany(models.UserDish)
   };
+  User.prototype.fullName = function(){
+    return `${this.FirstName} ${this.LastName}`
+  }
   return User;
 };

@@ -2,40 +2,39 @@ const express = require('express')
 const model = require('../models')
 const bodyParser = require('body-parser')
 const dashboard = express.Router()
+const checklogin = require('../helpers/checkLogin')
 
+dashboard.use('/', checklogin)
 dashboard.use(bodyParser.urlencoded({extended: false}))
 dashboard.use(bodyParser.json())
 
-// Displays random image on dashboard
 dashboard.get('/', (req, res) => {
-    console.log(req.session.profile.id)
-    model.Dish.findAll({
-        include: [{model: model.UserDish}]
-        })
-        .then(data => {
-            let arr = []
-            for (let i = 0; i < data.length; i++){
-                if (data[i].UserDishes.length == 0){
-                    arr.push(data[i])
+    model.User.findOne({where: req.session.profile.id})
+    .then(profile => {
+        model.Dish.findAll({
+            include: [{model: model.UserDish}]
+            })
+            .then(data => {
+                let arr = []
+                for (let i = 0; i < data.length; i++){
+                    if (data[i].UserDishes.length == 0){
+                        arr.push(data[i])
+                    }
                 }
-            }
-            let dishes = arr.length
-            console.log(dishes)
-            let randomPick = Math.ceil(Math.random()*dishes)
-            model.Dish.findOne({
-                where: {id: randomPick}
-                })
-                .then(dish => {
-                // res.send(dish)
-                res.render('dashboard.ejs', {data: dish})
-                })
-        })
+                let dishes = arr.length
+                let randomPick = Math.ceil(Math.random()*dishes)
+                model.Dish.findOne({
+                    where: {id: randomPick}
+                    })
+                    .then(dish => {
+                    res.render('dashboard.ejs', {data: dish, user: profile})
+                    })
+            })
+    }) 
 })
 
 dashboard.post('/', (req, res) => {
     if (Object.keys(req.body)[0] === 'Reject'){
-        // console.log(req.params.id)
-        // res.send(req.body)
         model.UserDish.create({
             UserId: req.session.profile.id,
             DishId: req.body.Reject,
@@ -47,8 +46,6 @@ dashboard.post('/', (req, res) => {
             res.redirect(`/dashboard`)
         })
     } else {
-        // console.log(req.params.id)
-        // res.send(req.body)
         model.UserDish.create({
             UserId: req.session.profile.id,
             DishId: req.body.Accept,
@@ -63,7 +60,6 @@ dashboard.post('/', (req, res) => {
 })
 
 dashboard.get('/reset', (req, res) => {
-    // res.send('hello')
     model.UserDish.destroy({
         where: {UserId: req.session.profile.id}
     })
