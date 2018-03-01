@@ -4,10 +4,6 @@ module.exports = (sequelize, DataTypes) => {
     FirstName: DataTypes.STRING,
     LastName: DataTypes.STRING,
     Age: DataTypes.STRING,
-<<<<<<< HEAD
-    Username: DataTypes.STRING,
-    Password: DataTypes.STRING
-=======
     Username: {
       type: DataTypes.STRING,
       validate: {
@@ -36,7 +32,6 @@ module.exports = (sequelize, DataTypes) => {
         }
       }
     }
->>>>>>> 33cb7f049a19b7e05619ecc458af07f7307b415c
   }, {});
   User.associate = function(models) {
     // associations can be defined here

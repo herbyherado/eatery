@@ -6,13 +6,13 @@ const bodyParser = require('body-parser')
 const model = require('./models')
 const session = require('express-session')
 const edit = require('./routes/edit')
+const list = require('./routes/list')
+const register = require('./routes/register')
 
+app.locals.helper = require('./helpers/index.js')
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
 
-
-// function checklogin()
-// app.set('trust proxy', 1) // trust first proxy
 app.use(session({
   secret: 'keyboard cat',
   resave: false,
@@ -20,21 +20,10 @@ app.use(session({
   cookie: {}
 }))
 
-const bodyParser = require('body-parser')
-
-const Models = require('./models')
-const index = require('./routes/index')
-const edit = require('./routes/edit')
-const list = require('./routes/list')
-const register = require('./routes/register')
-
-app.locals.helper = require('./helpers/index.js')
-app.use(bodyParser.urlencoded({extended: false}))
-
-app.use('/', index)
 app.use('/edit', edit)
 app.use('/list', list)
 app.use('/register', register)
+app.use('/dashboard', dashboard)
 
 // Testing
 app.get('/', (req, res) => {
@@ -45,7 +34,6 @@ app.get('/', (req, res) => {
     res.render('home.ejs', {err: req.query})
   }
 })
-
 
 app.post('/', (req, res) => {
   console.log(req.body)
@@ -76,8 +64,6 @@ app.post('/', (req, res) => {
 })
 
 app.use(express.static('public'))
-app.use('/dashboard', dashboard)
-app.use('/edit', edit)
 
 // Server
 app.listen(PORT, () => {
