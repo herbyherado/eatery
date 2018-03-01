@@ -16,7 +16,7 @@ module.exports = {
     Name: 'Steak',
     Price: 270000,
     Cuisine: 'Barbeque',
-    RestaurantId: null ,
+    RestaurantId: 5,
     Image: 'bbq_1',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -25,7 +25,7 @@ module.exports = {
     Name: 'Grilled Beef Slice',
     Price: 80000,
     Cuisine: 'Barbeque',
-    RestaurantId: null ,
+    RestaurantId: 5,
     Image: 'bbq_2',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -33,7 +33,7 @@ module.exports = {
     Name: 'Pork Belly',
     Price: 190000,
     Cuisine: 'Barbeque',
-    RestaurantId: null ,
+    RestaurantId: 6,
     Image: 'bbq_3',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -41,7 +41,7 @@ module.exports = {
     Name: 'Grilled Beef Slice',
     Price: 132500,
     Cuisine: 'Barbeque',
-    RestaurantId: null ,
+    RestaurantId: 6,
     Image: 'bbq_4',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -49,7 +49,7 @@ module.exports = {
     Name: 'Grilled Tenderloin Slice',
     Price: 90500,
     Cuisine: 'Barbeque',
-    RestaurantId: null ,
+    RestaurantId: 5,
     Image: 'bbq_5',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -57,7 +57,7 @@ module.exports = {
     Name: 'Smoked Ribs',
     Price: 200000,
     Cuisine: 'Barbeque',
-    RestaurantId: null ,
+    RestaurantId: 6,
     Image: 'bbq_6',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -65,7 +65,7 @@ module.exports = {
     Name: 'Buffet',
     Price: 350000,
     Cuisine: 'Chinese',
-    RestaurantId: null ,
+    RestaurantId: 7,
     Image: 'chinese_buffet',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -73,7 +73,7 @@ module.exports = {
     Name: 'Chicken Noodle',
     Price: 80000,
     Cuisine: 'Chinese',
-    RestaurantId: null ,
+    RestaurantId: 8,
     Image: 'Chinese_chickennoodle',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -81,7 +81,7 @@ module.exports = {
     Name: 'Hakkau',
     Price: 80000,
     Cuisine: 'Chinese',
-    RestaurantId: null ,
+    RestaurantId: 8,
     Image: 'Chinese_dumpling',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -89,7 +89,7 @@ module.exports = {
     Name: 'Buffet',
     Price: 260000,
     Cuisine: 'Chinese',
-    RestaurantId: null ,
+    RestaurantId: 7,
     Image: 'Chinese_hotpot_3',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -97,7 +97,7 @@ module.exports = {
     Name: 'Mixed Hot Pot',
     Price: 91000,
     Cuisine: 'Chinese',
-    RestaurantId: null ,
+    RestaurantId: 7,
     Image: 'Chinese_hotpot',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -105,7 +105,7 @@ module.exports = {
     Name: 'Sheng Jin Bao',
     Price: 65000,
     Cuisine: 'Chinese',
-    RestaurantId: null ,
+    RestaurantId: 8,
     Image: 'Chinese_shengjinbao',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -113,7 +113,7 @@ module.exports = {
     Name: 'Seafood Fetucinni',
     Price: 75000,
     Cuisine: 'Italian',
-    RestaurantId: null ,
+    RestaurantId: 9,
     Image: 'italian_fettucini',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -121,7 +121,7 @@ module.exports = {
     Name: 'Chicken Pomodoro',
     Price: 65000,
     Cuisine: 'Italian',
-    RestaurantId: null ,
+    RestaurantId: 9,
     Image: 'italian_pasta',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -129,7 +129,7 @@ module.exports = {
     Name: 'Smoked Salmon Linguini',
     Price: 90000,
     Cuisine: 'Italian',
-    RestaurantId: null ,
+    RestaurantId: 9,
     Image: 'italian_pasta2',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -137,7 +137,7 @@ module.exports = {
     Name: 'Shrimp Aglio Olio',
     Price: 78000,
     Cuisine: 'Italian',
-    RestaurantId: null ,
+    RestaurantId: 9,
     Image: 'italian_pasta3',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -145,7 +145,7 @@ module.exports = {
     Name: 'Vongole',
     Price: 85000,
     Cuisine: 'Italian',
-    RestaurantId: null ,
+    RestaurantId: 12,
     Image: 'italian_pasta4',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -153,7 +153,7 @@ module.exports = {
     Name: 'Beef Mayo Pizza',
     Price: 105000,
     Cuisine: 'Italian',
-    RestaurantId: null ,
+    RestaurantId: 12,
     Image: 'italian_pizza',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -161,7 +161,7 @@ module.exports = {
     Name: 'Quattro Formaggi',
     Price: 98000,
     Cuisine: 'Italian',
-    RestaurantId: null ,
+    RestaurantId: 12,
     Image: 'italian_pizza3',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -169,7 +169,7 @@ module.exports = {
     Name: 'Cheesy Stuffed Crust Pizza',
     Price: 89000,
     Cuisine: 'Italian',
-    RestaurantId: null ,
+    RestaurantId: 3,
     Image: 'italian_pizza4',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -177,7 +177,7 @@ module.exports = {
     Name: 'Pizza Romana',
     Price: 76000,
     Cuisine: 'Italian',
-    RestaurantId: null ,
+    RestaurantId: 3,
     Image: 'italian_pizza5',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -185,7 +185,7 @@ module.exports = {
     Name: 'Spontini Pizza',
     Price: 30000,
     Cuisine: 'Italian',
-    RestaurantId: null ,
+    RestaurantId: 3,
     Image: 'italian_spontinipizza',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -193,7 +193,7 @@ module.exports = {
     Name: 'Mixed Platter',
     Price: 80000,
     Cuisine: 'Middle Eastern',
-    RestaurantId: null ,
+    RestaurantId: 1,
     Image: 'middleeast_1',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -201,7 +201,7 @@ module.exports = {
     Name: 'Lamb Biryani',
     Price: 91000,
     Cuisine: 'Middle Eastern',
-    RestaurantId: null ,
+    RestaurantId: 23,
     Image: 'middleeast_biryani',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -209,7 +209,7 @@ module.exports = {
     Name: 'Lamb Biryani',
     Price: 115000,
     Cuisine: 'Middle Eastern',
-    RestaurantId: null ,
+    RestaurantId: 23,
     Image: 'middleeast_biryani2',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -217,7 +217,7 @@ module.exports = {
     Name: 'Beef Biryani',
     Price: 78000,
     Cuisine: 'Middle Eastern',
-    RestaurantId: null ,
+    RestaurantId: 23,
     Image: 'middleeast_biryani3',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -225,7 +225,7 @@ module.exports = {
     Name: 'Biryani Platter',
     Price: 60000,
     Cuisine: 'Middle Eastern',
-    RestaurantId: null ,
+    RestaurantId: 23,
     Image: 'middleeast_halalguys',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -233,7 +233,7 @@ module.exports = {
     Name: 'Kasbah',
     Price: 85000,
     Cuisine: 'Middle Eastern',
-    RestaurantId: null ,
+    RestaurantId: 23,
     Image: 'middleeast_kasbah_2',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -241,7 +241,7 @@ module.exports = {
     Name: 'Kasbah',
     Price: 30000,
     Cuisine: 'Middle Eastern',
-    RestaurantId: null ,
+    RestaurantId: 23,
     Image: 'middleeast_kasbah',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -249,7 +249,7 @@ module.exports = {
     Name: 'Shish Kebab',
     Price: 150000,
     Cuisine: 'Middle Eastern',
-    RestaurantId: null ,
+    RestaurantId: 23,
     Image: 'middleeast_kebabrice',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -257,7 +257,7 @@ module.exports = {
     Name: 'Zatar Pita Bread',
     Price: 35000,
     Cuisine: 'Middle Eastern',
-    RestaurantId: null ,
+    RestaurantId: 23,
     Image: 'middleeast_zatar',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -265,7 +265,7 @@ module.exports = {
     Name: 'Bakwan Malang',
     Price: 21000,
     Cuisine: 'Street Food',
-    RestaurantId: null ,
+    RestaurantId: 24,
     Image: 'Snack_bakso',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -273,13 +273,13 @@ module.exports = {
     Name: 'Chicken Cutlet',
     Price: 35000,
     Cuisine: 'Street Food',
-    RestaurantId: null ,
+    RestaurantId: 21,
     Image: 'Snack_chicken',
     createdAt: new Date (),
     updatedAt: new Date ()
   },{
     Name: 'Rice Bowl',
-    Price: 34000,
+    Price: 21,
     Cuisine: 'Street Food',
     RestaurantId: null ,
     Image: 'Snack_ricebowl',
@@ -287,7 +287,7 @@ module.exports = {
     updatedAt: new Date ()
   },{
     Name: 'Chicken Cutlet',
-    Price: 41000,
+    Price: 2,
     Cuisine: 'Street Food',
     RestaurantId: null ,
     Image: 'Street_crispychicken',
@@ -297,7 +297,7 @@ module.exports = {
     Name: 'Frozen Yoghurt',
     Price: 33000,
     Cuisine: 'Street Food',
-    RestaurantId: null ,
+    RestaurantId: 25,
     Image: 'Street_froyo',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -305,7 +305,7 @@ module.exports = {
     Name: 'Bubble Gum Gelato',
     Price: 29000,
     Cuisine: 'Street Food',
-    RestaurantId: null ,
+    RestaurantId: 25,
     Image: 'Street_gelato',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -313,7 +313,7 @@ module.exports = {
     Name: '3 Scooped Ice Cream',
     Price: 50000,
     Cuisine: 'Street Food',
-    RestaurantId: null ,
+    RestaurantId: 26,
     Image: 'street_icecream',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -321,7 +321,7 @@ module.exports = {
     Name: 'Coffee Marshmellow',
     Price: 38000,
     Cuisine: 'Street Food',
-    RestaurantId: null ,
+    RestaurantId: 21,
     Image: 'street_kopi',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -329,7 +329,7 @@ module.exports = {
     Name: 'Mango Dessert',
     Price: 50000,
     Cuisine: 'Street Food',
-    RestaurantId: null ,
+    RestaurantId: 4,
     Image: 'Street_mango',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -337,22 +337,15 @@ module.exports = {
     Name: 'Marshmellow Ice Cream',
     Price: 30000,
     Cuisine: 'Street Food',
-    RestaurantId: null ,
+    RestaurantId: 26,
     Image: 'Street_marshmallowicecream',
-    createdAt: new Date (),
-    updatedAt: new Date ()
-  },{
-    Name: 'Chicken Satay',
-    Price: 20000,
-    Cuisine: 'Street Food',
-    RestaurantId: null ,
-    Image: 'street_kopi',
     createdAt: new Date (),
     updatedAt: new Date ()
   }], {});
   },
 
   down: (queryInterface, Sequelize) => {
+    return queryInterface.bulkDelete('Dishes', null, {});
     /*
       Add reverting commands here.
       Return a promise to correctly handle asynchronicity.
