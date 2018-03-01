@@ -12,7 +12,7 @@ module.exports = {
         isBetaMember: false
       }], {});
     */
-   return queryInterface.bulkInsert('Dish', [{
+   return queryInterface.bulkInsert('Dishes', [{
     Name: 'Steak',
     Price: 270000,
     Cuisine: 'Barbeque',

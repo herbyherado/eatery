@@ -8,7 +8,7 @@ module.exports = {
 
       Example:
       */
-        return queryInterface.bulkInsert('Dish', [{
+        return queryInterface.bulkInsert('Dishes', [{
           Name: 'Martabak Aceh',
           Price: 30000,
           Cuisine: 'Aceh',

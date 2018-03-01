@@ -8,7 +8,7 @@ module.exports = {
 
       Example:
       */
-      return queryInterface.bulkInsert('User', [{
+      return queryInterface.bulkInsert('Users', [{
         FirstName: 'Herby',
         LastName: 'Herado',
         Age: 26,
