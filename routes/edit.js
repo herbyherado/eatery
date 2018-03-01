@@ -1,34 +1,118 @@
-const routes = require('express').Router()
-const Models = require('../models')
+const express = require('express')
+const model = require('../models')
+const bodyParser = require('body-parser')
+const edit = express.Router()
 
-routes.get('/', (req, res) => {
-  Models.Dish.update({RestaurantId: 17}, {
-    where: {id: 29}
-  }).then(()=>{
+edit.use(bodyParser.urlencoded({extended: false}))
+edit.use(bodyParser.json())
+
+edit.get('/', (req, res) => {
+    res.render('edit.ejs')
+})
+
+edit.get('/restaurant', (req, res) => {
+    model.Restaurant.findAll()
+        .then(data => {
+            // res.send(data)
+            res.render('restaurant-list.ejs', {data: data})
+        })
+})
+edit.get('/restaurant/update/:id', (req, res) => {
+    model.Restaurant.findAll()
+        .then(data => {
+            // res.send(data)
+            res.render('restaurant-list.ejs', {data: data})
+        })
+})
+
+edit.post('/restaurant/update/:id', (req, res) => {
+    model.Restaurant.update({
+        Name: req.body.Name,
+        Address: req.body.Address,
+        City: req.body.City
+    })
+})
+
+edit.get('/restaurant/delete/:id', (req, res) => {
+    model.Restaurant.destroy({where: {id: req.params.id}})
+        .then(data => {
+            console.log(data)
+            res.redirect('/restaurant')
+        })
+})
+
+edit.get('/dish', (req, res) => {
+  model.Dish.findAll({
+    order: [
+      ['id', 'ASC']
+    ]
+  })
+  .then((dishes) => {
+    // res.send(dishes) 
+    res.render('dish-list.ejs', {dishes: dishes})   
+  }).catch(err => {
+    console.log(err)
+  })
+})
+
+edit.get('/dish/update/:id', (req, res) => {
+    model.Dish.findById(req.params.id)
+        .then(dish => {
+            // res.send(dish)
+            res.render('edit_dish.ejs', {dish: dish})
+        }).catch(err => {
+          console.log(err)
+        })
+})
+
+edit.post('/dish/update/:id', (req, res) => {
+  let updDish = {
+    Name: req.body.Name,
+    Price: req.body.Price,
+    Cuisine: req.body.Cuisine
+  }
+  model.Dish.update(updDish, {
+    where: {
+      id: req.params.id
+    }
+  }).then(() => {
     res.redirect('/edit/dish')
   }).catch(err => {
     console.log(err)
   })
 })
 
-routes.get('/dish', (req, res) => {
-  Models.Dish.findAll({
-    include: [{
-      model: Models.Restaurant
-    }], order: [
-      ['id', 'ASC']
-    ]
-  })
-  .then((data) => {
-    res.send(data)    
-  }).catch(err => {
-    console.log(err)
-  })
+edit.get('/dish/delete/:id', (req, res) => {
+  model.Dish.findById(req.params.id)
+    .then(dish => {
+      dish.destroy()
+        .then(() => {
+          res.redirect('/edit/dish')
+        }).catch(err => {
+          console.log(err)
+        })
+    }).catch(err => {
+      console.log(err)
+    })
 })
 
-// Testing
-// routes.get('/', (req, res) => {
-//   res.status(200).json({ message: 'Connected!'})
-// })
+edit.get('/dish/add', (req, res)=>{
+  res.render('dish_add.ejs')
+})
 
-module.exports = routes;
+edit.post('/dish/add', (req, res)=>{
+  let newDish = {
+    Name: req.body.Name,
+    Price: req.body.Price,
+    Cuisine: req.body.Cuisine
+  }
+  model.Dish.create(newDish)
+    .then(()=>{
+      res.redirect('/edit/dish')
+    })
+    .catch(err=>{
+      console.log(err)
+    })
+})
+
+module.exports = edit
