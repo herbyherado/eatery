@@ -17,11 +17,29 @@ edit.get('/restaurant', (req, res) => {
             res.render('restaurant-list.ejs', {data: data})
         })
 })
+edit.get('/restaurant/add/', (req, res) => {
+    res.render('restaurant-add.ejs')
+})
+
+edit.post('/restaurant/add', (req, res) => {
+    model.Restaurant.create({
+        Name: req.body.Name,
+        Address: req.body.Address,
+        City: req.body.City,
+        Latitude: req.body.Latitude,
+        Longitude: req.body.Longitude,
+        createdAt: new Date(),
+        updatedAt: new Date()
+    })
+    .then(()=> {
+        res.redirect('/restaurant')
+    })
+})
 edit.get('/restaurant/update/:id', (req, res) => {
-    model.Restaurant.findAll()
+    model.Restaurant.findOne({where: {id: req.params.id}})
         .then(data => {
             // res.send(data)
-            res.render('restaurant-list.ejs', {data: data})
+            res.render('restaurant-update.ejs', {data: data})
         })
 })
 
@@ -29,7 +47,14 @@ edit.post('/restaurant/update/:id', (req, res) => {
     model.Restaurant.update({
         Name: req.body.Name,
         Address: req.body.Address,
-        City: req.body.City
+        City: req.body.City,
+        Latitude: req.body.Latitude,
+        Longitude: req.body.Longitude
+    },{
+        where: {id: req.params.id}
+    })
+    .then(()=> {
+        res.redirect('/restaurant')
     })
 })
 

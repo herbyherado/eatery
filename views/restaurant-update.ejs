@@ -1,0 +1,28 @@
+<!doctype html>
+<html>
+    <head>
+        <title>eatery</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href = '/edit'>Home</a></li>
+                    <li><a href = '/logout'>Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <form method="POST">
+                Name: <input type="text" name="Name" value="<%= data.Name %>"><br>
+                City: <input type="text" name="City" value="<%= data.City %>"><br>
+                Address: <input type="text" name="Address" value="<%= data.Address %>"><br>
+                Latitude: <input type="text" name="Latitude" value="<%= data.Latitude %>"><br>
+                Longitude: <input type="text" name="Longitude" value="<%= data.Longitude %>"><br>
+                <input type="submit" value="Submit">
+            </form>
+            <br>
+            <button><a href='/edit/restaurant'>Back</a></button>
+        </div>
+    </body>
+</html>
