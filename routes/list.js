@@ -1,13 +1,31 @@
 const routes = require("express").Router();
 const Models = require("../models");
+const Sequelize = require('sequelize')
+const Op = Sequelize.Op
 
 routes.get("/", (req, res) => {
-  Models.Restaurant.findAll({
-  })
-    .then(restaurants => {
-      // res.send(restaurants)
-      // console.log(parseFloat(restaurants[0].Latitude))
-      res.render('list.ejs', {restaurants: restaurants})
+  Models.UserDish.findAll({
+    include: [
+      {model: Models.Dish}
+    ],
+    where: {
+      UserId: req.session.profile.id
+    }
+  }).then(userdishes => {
+      let arr = []
+      userdishes.forEach((userdishes) => {
+        arr.push(userdishes.Dish.RestaurantId)
+      })
+      Models.Restaurant.findAll({
+        where: {
+          id: {
+            [Op.in]: arr
+          }
+        }
+      }).then(restaurants => {
+        // res.send(restaurants)
+        res.render('list.ejs', {restaurants: restaurants})
+      })
     })
     .catch(err => {
       console.log(err);
@@ -24,10 +42,5 @@ routes.get("/get_map/:id", (req, res)=> {
       console.log(err)
     })
 })
-
-// Testing
-// routes.get('/', (req, res) => {
-//   res.status(200).json({ message: 'Connected!'})
-// })
 
 module.exports = routes;
