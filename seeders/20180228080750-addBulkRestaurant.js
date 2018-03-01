@@ -178,6 +178,38 @@ module.exports = {
       Longitude: '106.8061299250',
       createdAt: new Date(),
       updatedAt: new Date()
+    }, {
+      Name: `Abu Nawas`,
+      Address: 'Jl. Kemang Utara Raya No. 15, Kemang',
+      City: 'Jakarta',
+      Latitude: '-6.2573639304',
+      Longitude: '106.8185321',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      Name: `Bakso Malang Nonik`,
+      Address: 'Jl. Ratu Kemuning Raya No. 19 A, Green Ville',
+      City: 'Jakarta',
+      Latitude: '-6.1696913238',
+      Longitude: '106.7681344',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      Name: `Latteria Gelato and Dessert Bar`,
+      Address: 'Ruko Crown Golf, Blok D No. 39, Bukit Golf Mediterania, Jl. Marina Indah Raya, Pantai Indah Kapuk',
+      City: 'Jakarta',
+      Latitude: '-6.1113893106',
+      Longitude: '106.7382804',
+      createdAt: new Date(),
+      updatedAt: new Date()
+    }, {
+      Name: `Alphabeth Gelato`,
+      Address: 'Jl. Barito 2 No. 7, Melawai, Jakarta',
+      City: 'Jakarta',
+      Latitude: '-6.2471315087',
+      Longitude: '106.7947024',
+      createdAt: new Date(),
+      updatedAt: new Date()
     }])
   },
 

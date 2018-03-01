@@ -1,0 +1,32 @@
+<!doctype html>
+<html>
+    <head>
+        <title>eatery</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href = '/dashboard/1'>Home</a></li>
+                    <li><a href = '/list'>Let's Eat!</a></li>
+                    <li><a href = '/dashboard/1/reset' onclick="return confirm('Reset progress?')">Reset</a></li>
+                    <li><a href = '/logout'>Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <% if (data) { %>
+                <img src ='/images/<%= data.Image %>.png' display="block" height="350px" width="auto">
+                <h3><%= data.Name %></h3>
+            <% } else { %>
+                <h3>you ran out of options</h3>
+            <% } %>
+        </div>
+        <table>
+            <form method="POST">
+                <button type="submit" value="<%= data.id %>" name="Reject">Pass</button>
+                <button type="submit" value="<%= data.id %>" name="Accept">Yes!</button>
+            </form>
+        </table>
+    </body>
+</html>
