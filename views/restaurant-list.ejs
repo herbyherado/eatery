@@ -20,6 +20,7 @@
                         <th>Name</th>
                         <th>Address</th>
                         <th>City</th>
+                        <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -29,12 +30,15 @@
                             <td><%= data[i].Name %></td>
                             <td><%= data[i].Address %></td>
                             <td><%= data[i].City %></td>
+                            <td>
+                                <button><a href ="/edit/restaurant/update/<%= data[i].id %>">Update</a></button>
+                                <button onclick="return confirm('Delete record?')"><a href ="/edit/restaurant/delete/<%= data[i].id %>">Delete</a></button>
+                            </td>
                         </tr>
                     <% } %>
                 </tbody>
             </table>
-            <button><a href= '/edit/restaurant'>Restaurant</a></button>
-            <button><a href= '/edit/dish'>Dish</a></button>
+            <button><a href= '/edit'>Back</a></button>
         </div>
     </body>
 </html>
