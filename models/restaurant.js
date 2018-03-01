@@ -1,4 +1,5 @@
 'use strict';
+const getMap = require('../helpers/index')
 module.exports = (sequelize, DataTypes) => {
   var Restaurant = sequelize.define('Restaurant', {
     Name: DataTypes.STRING,
@@ -11,5 +12,9 @@ module.exports = (sequelize, DataTypes) => {
     Restaurant.hasMany(models.Dish)
     // associations can be defined here
   };
+
+  Restaurant.prototype.myMap = function() {
+    return getMap(this.Name, parseFloat(this.Latitude), parseFloat(this.Longitude))
+  }
   return Restaurant;
 };
