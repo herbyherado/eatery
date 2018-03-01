@@ -4,6 +4,7 @@ const PORT = 3000
 
 // Testing
 app.get('/', (req, res) => {
+  res.render('home.ejs')
   res.status(200).json({ message: 'Connected!'})
 })
 
