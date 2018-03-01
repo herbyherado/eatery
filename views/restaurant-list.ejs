@@ -1,0 +1,40 @@
+<!doctype html>
+<html>
+    <head>
+        <title>eatery</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href = '/edit'>Home</a></li>
+                    <li><a href = '/logout'>Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>City</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let i = 0; i < data.length; i++) { %>
+                        <tr>
+                            <td><%= i+1 %></td>
+                            <td><%= data[i].Name %></td>
+                            <td><%= data[i].Address %></td>
+                            <td><%= data[i].City %></td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <button><a href= '/edit/restaurant'>Restaurant</a></button>
+            <button><a href= '/edit/dish'>Dish</a></button>
+        </div>
+    </body>
+</html>

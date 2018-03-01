@@ -5,6 +5,7 @@ const dashboard = require('./routes/dashboard')
 const bodyParser = require('body-parser')
 const model = require('./models')
 const session = require('express-session')
+const edit = require('./routes/edit')
 
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(bodyParser.json())
@@ -59,6 +60,7 @@ app.post('/', (req, res) => {
 
 app.use(express.static('public'))
 app.use('/dashboard', dashboard)
+app.use('/edit', edit)
 
 // Server
 app.listen(PORT, () => {
