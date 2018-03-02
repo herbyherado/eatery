@@ -8,6 +8,7 @@ const session = require('express-session')
 const register = require('./routes/register')
 const edit = require('./routes/edit')
 const list = require('./routes/list')
+const checklogin = require('./helpers/checkLogin')
 
 app.use(express.static('public'))
 app.locals.helper = require('./helpers/index.js')
@@ -27,7 +28,7 @@ app.use('/register', register)
 app.use('/dashboard', dashboard)
 
 app.get('/', (req, res) => {
-  console.log(req.query)
+  // console.log(req.query)
   if (!req.query){
     res.render('home.ejs', {err: null})
   } else {
@@ -36,7 +37,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/', (req, res) => {
-  console.log(req.body)
+  // console.log(req.body)
   model.User.findOne({
     where: {Username: req.body.Username}
   })
@@ -62,6 +63,12 @@ app.post('/', (req, res) => {
       })
     }
   })
+})
+
+app.get('/logout', checklogin, (req, res) => {
+  req.session.isLogin = false
+  req.session.profile = null
+  res.redirect('/')
 })
 
 // Server
