@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+
+<head>
+  <title>eatery</title>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <ul>
+        <li>
+          <a href='/edit'>Home</a>
+        </li>
+        <li>
+          <a href='/logout'>Logout</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Cuisine</th>
+        </tr>
+      </thead>
+      <tbody>
+          <% dishes.forEach((dish,i) => {%>
+            <tr>
+              <td><%= i+1%></td>
+              <td><%= dish.Name%></td>
+              <td><%= dish.Price%></td>
+              <td><%= dish.Cuisine%></td>
+              <td>
+                <button>
+                  <a href="/edit/dish/update/<%= dish.id %>">Update</a>
+                </button>
+                <button onclick="return confirm('Delete record?')">
+                  <a href="/edit/dish/delete/<%= dish.id %>">Delete</a>
+                </button>
+              </td>
+            </tr>
+          <%})%>
+      </tbody>
+    </table>
+    <button><a href='/edit/dish/add'>Add New Dish</a></button>
+    <button>
+      <a href='/edit'>Back</a>
+    </button>
+  </div>
+</body>
+
+</html>
