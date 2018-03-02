@@ -21,12 +21,19 @@ dashboard.get('/', (req, res) => {
                         arr.push(data[i])
                     }
                 }
+                // checks by avalaible id
+                let newArr = []
+                for (let j = 0; j < arr.length; j++){
+                    newArr.push(arr[j].id)
+                }
+                // res.send(newArr)
                 let dishes = arr.length
                 let randomPick = Math.ceil(Math.random()*dishes)
                 model.Dish.findOne({
-                    where: {id: randomPick}
+                    where: {id: newArr[randomPick]}
                     })
                     .then(dish => {
+                        // res.send(dish)
                     res.render('dashboard.ejs', {data: dish, user: profile})
                     })
             })

@@ -1,8 +1,15 @@
 const routes = require("express").Router();
 const Models = require("../models");
+const checklogin = require('../helpers/checkLogin')
 
+routes.use('/', checklogin)
 routes.get("/", (req, res) => {
-  Models.Restaurant.findAll({
+  Models.UserDish.findAll({
+    where: {UserId: req.session.profile.id},
+    include: [{
+      model: Models.Dish,
+      include: [{model: Models.Restaurant}]
+    }]
   })
     .then(restaurants => {
       // res.send(restaurants)

@@ -281,7 +281,7 @@ module.exports = {
     Name: 'Rice Bowl',
     Price: 21,
     Cuisine: 'Street Food',
-    RestaurantId: null ,
+    RestaurantId: 2 ,
     Image: 'Snack_ricebowl',
     createdAt: new Date (),
     updatedAt: new Date ()
@@ -289,7 +289,7 @@ module.exports = {
     Name: 'Chicken Cutlet',
     Price: 2,
     Cuisine: 'Street Food',
-    RestaurantId: null ,
+    RestaurantId: 2 ,
     Image: 'Street_crispychicken',
     createdAt: new Date (),
     updatedAt: new Date ()
