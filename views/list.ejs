@@ -8,7 +8,7 @@
         <th>No</th>
         <th>Food Name</th>
         <th>Restaurant Name</th>
-        <th>Restaurant Address</th>
+        <th>Price</th>
       </thead>
       <tbody>
         <% restaurants.forEach((restaurant,i) => {%>
@@ -16,7 +16,8 @@
             <td><%= i+1%></td>
             <td><%= restaurant.Dish.Name%></td>
             <td><%= restaurant.Dish.Restaurant.Name%></td>
-            <td><%= restaurant.Dish.Restaurant.Address%></td>
+            <td><%= restaurant.Dish.Price%></td>
+            <!-- <td><%= restaurant.Dish.Restaurant.Address%></td> -->
           </tr>
         <%})%>
       </tbody>

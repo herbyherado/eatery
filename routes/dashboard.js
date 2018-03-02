@@ -28,7 +28,7 @@ dashboard.get('/', (req, res) => {
                 }
                 // res.send(newArr)
                 let dishes = arr.length
-                let randomPick = Math.ceil(Math.random()*dishes)
+                let randomPick = Math.ceil(Math.random()*dishes-1)
                 model.Dish.findOne({
                     where: {id: newArr[randomPick]}
                     })
