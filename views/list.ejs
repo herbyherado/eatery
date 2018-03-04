@@ -6,15 +6,18 @@
     <table style="cursor:pointer">
       <thead>
         <th>No</th>
-        <th>Nama Restaurat</th>
-        <th>Address</th>
+        <th>Food Name</th>
+        <th>Restaurant Name</th>
+        <th>Price</th>
       </thead>
       <tbody>
         <% restaurants.forEach((restaurant,i) => {%>
           <tr onclick="document.location='/list/get_map/<%= restaurant.id%>'" style="cursor:hand">
             <td><%= i+1%></td>
-            <td><%= restaurant.Name%></td>
-            <td><%= restaurant.Address%></td>
+            <td><%= restaurant.Dish.Name%></td>
+            <td><%= restaurant.Dish.Restaurant.Name%></td>
+            <td><%= restaurant.Dish.Price%></td>
+            <!-- <td><%= restaurant.Dish.Restaurant.Address%></td> -->
           </tr>
         <%})%>
       </tbody>

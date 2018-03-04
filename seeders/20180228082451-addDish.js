@@ -29,7 +29,7 @@ module.exports = {
           Name: 'Nasi Goreng Aceh',
           Price: 25000,
           Cuisine: '20',
-          RestaurantId: null ,
+          RestaurantId: 19 ,
           Image: 'aceh-nasi_goreng_aceh',
           createdAt: new Date (),
           updatedAt: new Date ()
@@ -167,14 +167,6 @@ module.exports = {
           Cuisine: 'Japanese',
           RestaurantId: 14,
           Image: 'japanese-curry_rice',
-          createdAt: new Date (),
-          updatedAt: new Date ()
-        },{
-          Name: 'Chicken Katsu',
-          Price: 80000,
-          Cuisine: 'Japanese',
-          RestaurantId: null ,
-          Image: 'japanese-chicken_katsu',
           createdAt: new Date (),
           updatedAt: new Date ()
         },{

@@ -2,7 +2,9 @@ const routes = require("express").Router();
 const Models = require("../models");
 const Sequelize = require('sequelize')
 const Op = Sequelize.Op
+const checklogin = require('../helpers/checkLogin')
 
+routes.use('/', checklogin)
 routes.get("/", (req, res) => {
   Models.UserDish.findAll({
     include: [

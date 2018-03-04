@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <title>eatery</title>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <ul>
+                    <li><a href = '/edit'>Home</a></li>
+                    <li><a href = '/logout'>Logout</a></li>
+                </ul>
+            </nav>
+        </header>
+        <div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>No</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Latitude</th>
+                        <th>Longitude</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% for (let i = 0; i < data.length; i++) { %>
+                        <tr>
+                            <td><%= i+1 %></td>
+                            <td><%= data[i].Name %></td>
+                            <td><%= data[i].Address %></td>
+                            <td><%= data[i].City %></td>
+                            <td><%= data[i].Latitude %></td>
+                            <td><%= data[i].Longitude %></td>
+                            <td>
+                                <button><a href ="/edit/restaurant/update/<%= data[i].id %>">Update</a></button>
+                                <button onclick="return confirm('Delete record?')"><a href ="/edit/restaurant/delete/<%= data[i].id %>">Delete</a></button>
+                            </td>
+                        </tr>
+                    <% } %>
+                </tbody>
+            </table>
+            <button><a href='/edit/restaurant/add'>Add</a></button>
+            <button><a href='/edit'>Back</a></button>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<html>
+  <head>
+
+  </head>
+  <body>
+    <form action="/register" method="post">
+      <h2>Registration Form</h2>
+      <% if(succeed) {%>
+        <p>You've Created a New Account%></p>
+      <% } else if(err) {%>
+        <p><%= err %></p>
+      <%}%>
+      <fieldset>
+        <label for="FirstName">FirstName</label>
+        <input name="FirstName" type="text" placeholder="FirstName" value=""><br><br>
+      
+        <label for="LastName">LastName</label>
+        <input name="LastName" type="text" placeholder="LastName" value=""><br><br>
+      
+        <label for="Age">Age</label>
+        <input name="Age" type="text" placeholder="Age" value=""><br><br>
+      
+        <label for="Username">Username</label>
+        <input name="Username" type="text" placeholder="Username" value=""><br><br>
+      
+        <label for="Password">Password</label>
+        <input name="Password" type="password" placeholder="Password" value=""><br><br>
+
+        <button type="submit">Submit</button>
+        </fieldset>
+    </form>
+  </body>
+</html>
